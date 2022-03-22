@@ -14,9 +14,19 @@ namespace DataGeneratorOrder
             config.CustomersToCreate = 10;
             config.ProductsToCreate = 10;
 
-            Generator gen = new Generator();
+            DateTime dt = new DateTime(2022, 3, 21);
 
-            foreach (Customer cust in gen.CustomerList)
+            Generator gen = new Generator(dt);
+            Order od = gen.GenerateOrder();
+
+            Console.WriteLine(od.ToString());
+
+            //To Do.  For Order Stream.  Need to Load Customers, Products in List and update config
+
+
+            
+
+           /* foreach (Customer cust in gen.CustomerList)
             {
                 Console.WriteLine(cust.ToString());
             }
@@ -30,7 +40,9 @@ namespace DataGeneratorOrder
             foreach (Order order in gen.OrderList)
             {
                 Console.WriteLine(order.ToString());
-            }
+            }*/
+
+            
 
         }
     }
